@@ -1,0 +1,146 @@
+<html>
+    <head><title>REGISTRATION</title>
+
+        <style>
+            body {
+                background-color:rgb(114,182,227);
+                background-color:blueviolet;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0
+            }
+            registration-container {
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 height:300pv;
+            }
+                form {
+                    display: flex;
+                    width: 400px;
+                    height: auto;
+                    flex-direction: column;
+                    
+                }
+                .personalInfo{
+                flex:1;
+                margin-right:20px;
+                flex-direction: column;
+                }
+                .accountInfo{
+                    flex: 1;
+                    margin-left: 20px;
+
+                }
+                
+                fieldset{
+                    background-color: white;
+                }
+                label {
+                    display: block;
+                    margin-bottom: 10px;
+                    
+                    
+                    }
+                input {
+                        padding: 8px;
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+                button {
+                        padding: 5px;
+                        background-color: white;
+                        color:black;
+                        border: none;
+                        cursor: pointer;
+                        width: 100%;
+                        background-color: blueviolet;
+                        
+                }
+ </style>
+ <script>
+    function validation() 
+    {
+        var UserName=$('#userName').val();
+        var email=$('#email').val();
+        var PhoneNumber=$('#Phone Number').val();
+        var password=$('#password').val();
+        var confirmpassword=$('#confirmpassword').val();
+        
+        if(UserName===''|| email===''||PhoneNumber===''|| password===''|| confirmpassword==='')
+        {
+            alert ('please fill in all field');
+            return false;
+        }
+        var PhoneNumberRegex=/^\d{10}$/;
+        if(!PhoneNumber.match(PhoneNumberRegex))
+        {
+            alert('please enter a valid number');
+            return false;
+        }
+        return true;
+
+        
+    }
+ </script>
+    </head>
+<body>
+
+<fieldset>
+    <h1>Registration</h1>
+    <div class="registration-container">
+        <form>
+        <div class="personalInfo">
+            <label for="Full Name">Full Name</label>
+            <input type="text" id="Full Name" name="Full Name" placeholder="Enter your Full Name" required>
+        </div>
+        <div class="personalInfo">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+        </div>
+        <div class="personalInfo">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="accountInfo">
+            <label for=" UserName">User Name</label>
+            <input type="text" id="User Name" name="User Name" placeholder="Enter your User Name" required>
+        </div>
+        <div class="accountInfo">
+            <label for="phone Number">Phone Number</label>
+            <input type="phone Number" id="Phone Number" name="Phone Number" placeholder="Enter your Phone Number" required>
+        </div>
+        
+        <div class="accountInfo">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Enter your confirm-password" required>
+        </div>
+        <label>Gender</label>
+        <div class="gender-label">
+                <input type="radio" id="Male" name="gender" value="male">  
+                <label for="Male">Male</label>
+            </div> 
+            <div class="gender-label" >         
+                 <input type="radio"id="Female" name="gender" value="female">
+                 <label for="Female">Female</label>
+            </div>
+            <div class="gender-label">
+                <input type="radio" id="prefer not to say"name="gender" value="prefer not to say">
+                <label for="Prefer not to say">Prefer not to say</label>
+                </div>
+        </div>
+        <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+        </form>
+    </div>
+</fieldset>
+</body>
+</html>
+
+
+
+
+
